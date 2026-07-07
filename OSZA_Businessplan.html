@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSightZA - Business Plan | Empowering African Enterprise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #00a8e8;
+            --dark-blue: #003459;
+            --accent-cyan: #00d9ff;
+            --text-dark: #1a1a2e;
+            --text-gray: #4a5568;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Colorful Bar Animation */
+        .color-bar {
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, 
+                #5f27cd, #00d2d3, #1dd1a1, #ff6b6b, #feca57);
+            background-size: 200% 100%;
+            animation: colorShift 3s ease infinite;
+        }
+
+        @keyframes colorShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .client-login {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .client-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,168,232,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+        }
+
+        .eye-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            position: relative;
+            background: radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .eye-logo {
+            width: 150px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,168,232,0.3);
+        }
+
+        .eye-logo::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .eye-logo::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: var(--dark-blue);
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .color-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+        }
+
+        .tagline {
+            color: var(--primary-blue);
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--text-gray);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,168,232,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,168,232,0.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .card-highlight {
+            background: linear-gradient(135deg, rgba(0,168,232,0.05), rgba(0,217,255,0.05));
+            border-left: 4px solid var(--primary-blue);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--bg-light);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--warning);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .problem-card h4 {
+            color: var(--dark-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Financial Table */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .financial-table th {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            padding: 1.25rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .financial-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .financial-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        .financial-table tr:last-child td {
+            border-bottom: none;
+            font-weight: 700;
+            background: rgba(0,168,232,0.05);
+        }
+
+        /* SWOT Grid */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .swot-card {
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .swot-strengths { background: rgba(16,185,129,0.05); }
+        .swot-strengths::before { background: var(--success); }
+        
+        .swot-weaknesses { background: rgba(245,158,11,0.05); }
+        .swot-weaknesses::before { background: var(--warning); }
+        
+        .swot-opportunities { background: rgba(0,168,232,0.05); }
+        .swot-opportunities::before { background: var(--primary-blue); }
+        
+        .swot-threats { background: rgba(239,68,68,0.05); }
+        .swot-threats::before { background: #ef4444; }
+
+        .swot-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .swot-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .swot-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-gray);
+        }
+
+        .swot-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+        }
+
+        /* BMC Table */
+        .bmc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        .bmc-table th, .bmc-table td {
+            padding: 1.25rem;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .bmc-table th {
+            background: var(--dark-blue);
+            color: white;
+            width: 30%;
+        }
+
+        /* Projections */
+        .projections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .projection-card {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projection-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .projection-card h4 {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .projection-card .metric {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .projection-card .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            position: relative;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-blue), var(--accent-cyan));
+            border-radius: 2px;
+        }
+
+        .roadmap-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .roadmap-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .roadmap-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 400px;
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .roadmap-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .roadmap-item:nth-child(odd) .roadmap-content::before {
+            right: -2.6rem;
+        }
+
+        .roadmap-item:nth-child(even) .roadmap-content::before {
+            left: -2.6rem;
+        }
+
+        .roadmap-content h4 {
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .roadmap-content .phase {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.25rem; }
+            .card-grid, .projections-grid, .swot-grid { grid-template-columns: 1fr; }
+            .roadmap::before { left: 20px; }
+            .roadmap-item, .roadmap-item:nth-child(even) { 
+                padding-left: 60px; 
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            .roadmap-content { margin: 0; max-width: 100%; }
+            .roadmap-item:nth-child(odd) .roadmap-content::before,
+            .roadmap-item:nth-child(even) .roadmap-content::before {
+                left: -2.6rem;
+                right: auto;
+            }
+            .financial-table { font-size: 0.9rem; }
+            .bmc-table th, .bmc-table td { padding: 0.75rem; font-size: 0.9rem; }
+        }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Print Styles */
+        @media print {
+            nav, .cta-section, footer { display: none; }
+            section { page-break-inside: avoid; }
+            .card, .problem-card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="color-bar"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">👁</div>
+            <span>OpenSightZA</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#executive-summary">Executive Summary</a></li>
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#financials">Financials</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+        <a href="#" class="client-login">Client Login</a>
+    </nav>
+
+
+    <!-- Executive Summary -->
+    <section id="executive-summary">
+        <div class="section-header">
+            <h2>Executive Summary</h2>
+            <p>Accelerating African Digital Transformation Through Zero-Risk Technology Partnerships</p>
+        </div>
+        
+        <div class="card">
+            <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-gray);">
+                <strong>OpenSightZA</strong> is a next-generation digital transformation agency built for the African market. 
+                We solve the critical bottleneck of software adoption by eliminating upfront capital expenditure (CapEx) risks 
+                for businesses through our proprietary <strong>"Zero-Risk Digital Transformation"</strong> model.
+            </p>
+            <div class="card-highlight" style="margin-top: 2rem;">
+                <strong>Our Promise:</strong> Build custom web applications, AI automations, and digital strategies with 
+                <strong>R0.00 upfront development fee</strong>. Clients pay a predictable monthly operational expenditure (OpEx) 
+                retainer. Through our Rent-to-Buy structure, a portion of every payment buys down the ownership of the software, 
+                eventually transferring 100% of the Intellectual Property (IP) to the client.
+            </div>
+        </div>
+
+        <div class="card-grid" style="margin-top: 3rem;">
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h3>Basic Business Agency</h3>
+                <p>The entry point services that build trust and establish brand identity before building complex tech.</p>
+                <div class="card-highlight">Brand Design • UI/UX • Digital Strategy</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Custom Web Applications</h3>
+                <p>The core engine featuring our proprietary Zero-Risk Rent-to-Buy model for custom software development.</p>
+                <div class="card-highlight">R0 Upfront • R3,500/month • Full IP Transfer</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>AI Automation (AIAA)</h3>
+                <p>The high-margin accelerator integrating artificial intelligence into daily operations.</p>
+                <div class="card-highlight">Chatbots • Document Processing • Marketing AI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem -->
+    <section id="problem" class="problem-section">
+        <div class="section-header">
+            <h2>The Problem We Are Solving</h2>
+            <p>Understanding the African Context</p>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h4>🏢 For SMEs</h4>
+                <p>Lack of access to large upfront capital (R30,000 - R150,000+) means they cannot afford custom software or AI. They are trapped using inefficient manual processes (WhatsApp, Excel) or expensive, generic foreign SaaS tools that don't fit local workflows.</p>
+            </div>
+            <div class="problem-card">
+                <h4>🏛️ For Enterprises</h4>
+                <p>Lengthy CapEx procurement cycles delay digital transformation by months. Furthermore, once an agency is paid upfront, they have no financial incentive to maintain or update the software long-term.</p>
+            </div>
+            <div class="problem-card">
+                <h4>🤖 The AI Divide</h4>
+                <p>African businesses know they need AI to stay competitive, but lack the in-house expertise to implement it safely and effectively.</p>
+            </div>
+            <div class="problem-card">
+                <h4>💸 The "Sunk Cost" Trap</h4>
+                <p>Businesses pay R50,000 for an app, but because they lack in-house tech teams to maintain it, the app breaks or becomes obsolete within a year.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Portfolio -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Our Service Portfolio</h2>
+            <p>The Three Pillars of OpenSightZA</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">1</div>
+                <h3>Basic Business Agency Services</h3>
+                <p><strong>The Entry Point</strong></p>
+                <p>The "front door" services that build trust and establish brand identity before building complex tech.</p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Brand identity design</li>
+                    <li>UI/UX prototyping</li>
+                    <li>Digital strategy consulting</li>
+                    <li>Basic web presence</li>
+                </ul>
+                <div class="card-highlight">
+                    <strong>Pricing:</strong> Standard project-based fees or low-cost monthly "Brand Retainer"
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">2</div>
+                <h3>Custom Web Applications</h3>
+                <p><strong>The Core Engine</strong></p>
+                <p>The proprietary "Zero-Risk Rent-to-Buy" model that eliminates upfront costs.</p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Custom web apps & dashboards</li>
+                    <li>Client portals</li>
+                    <li>Inventory management</li>
+                    <li>Local payment integrations (PayFast, Yoco)</li>
+                </ul>
+                <div class="card-highlight">
+                    <strong>Pricing:</strong> R0 upfront • R3,500/month • Full IP transfer after 24 months
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">3</div>
+                <h3>AI Automation Agency (AIAA)</h3>
+                <p><strong>The High-Margin Accelerator</strong></p>
+                <p>Integrating artificial intelligence into the client's daily operations to drastically reduce overhead.</p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Custom AI chatbots</li>
+                    <li>Automated document processing</li>
+                    <li>AI-driven lead scoring</li>
+                    <li>Automated campaigns</li>
+                </ul>
+                <div class="card-highlight">
+                    <strong>Pricing:</strong> Setup Fee (waived) + R2,000-R5,000/month retainer
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Mechanics -->
+    <section id="financials">
+        <div class="section-header">
+            <h2>Core Financial Mechanics</h2>
+            <p>The "Zero-Risk" Rent-to-Buy Model</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 3rem;">
+            <h3 style="color: var(--dark-blue); margin-bottom: 1.5rem; font-size: 1.5rem;">How It Works</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">1. Cloud Infrastructure</h4>
+                    <p style="color: var(--text-gray); font-size: 0.95rem;">Client creates their own GCP account and attaches their credit card. Cost: R150-R500/month paid directly to Google. Hosted in africa-south1 (Johannesburg).</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">2. Care & Portal Retainer</h4>
+                    <p style="color: var(--text-gray); font-size: 0.95rem;">R3,500/month flat fee covering Client Portal access, server monitoring, security patches, bug fixes, and up to 3 hours of minor feature tweaks.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">3. Rent-to-Buy Amortization</h4>
+                    <p style="color: var(--text-gray); font-size: 0.95rem;">Total buyout value: R48,000. R2,000/month credited toward buyout. R1,500 retained by OpenSightZA. Full IP transfer after 24 months.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--dark-blue); margin: 3rem 0 2rem; font-size: 1.8rem;">Unit Economics (Per Client / Per Month)</h3>
+        <table class="financial-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Amount</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gross Retainer Collected</strong></td>
+                    <td><strong>R3,500</strong></td>
+                    <td>Paid by client via automated debit order</td>
+                </tr>
+                <tr>
+                    <td>Less: IP Buydown Credit</td>
+                    <td>(R2,000)</td>
+                    <td>Non-cash credit reducing the R48k buyout balance</td>
+                </tr>
+                <tr>
+                    <td><strong>Net MRR (Gross Profit)</strong></td>
+                    <td><strong>R1,500</strong></td>
+                    <td>Pure recurring revenue for OpenSightZA</td>
+                </tr>
+                <tr>
+                    <td>Less: OpenSightZA Cloud/Tool Costs</td>
+                    <td>(R100)</td>
+                    <td>Our share of GCP/AI API overhead per client</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Profit per Client</strong></td>
+                    <td><strong style="color: var(--success); font-size: 1.2rem;">R1,400 / month</strong></td>
+                    <td><strong>R16,800 annual profit per client</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="card-highlight" style="margin-top: 2rem; text-align: center; font-size: 1.1rem;">
+            <strong>At just 20 clients:</strong> OpenSightZA generates <strong style="color: var(--success);">R28,000 in pure, predictable monthly profit</strong>, with zero server risk.
+        </div>
+    </section>
+
+    <!-- SWOT Analysis -->
+    <section class="problem-section">
+        <div class="section-header">
+            <h2>SWOT Analysis</h2>
+            <p>Strategic Position Assessment</p>
+        </div>
+
+        <div class="swot-grid">
+            <div class="swot-card swot-strengths">
+                <h4>💪 Strengths</h4>
+                <ul>
+                    <li>Frictionless Sales Cycle - Zero upfront CapEx removes biggest objection</li>
+                    <li>High Client Retention ("Golden Handcuffs") - IP amortization disincentivizes churn</li>
+                    <li>Zero Infrastructure Risk - Client-owned GCP billing protects us</li>
+                    <li>Local Data Sovereignty - GCP Johannesburg region compliance edge</li>
+                </ul>
+            </div>
+
+            <div class="swot-card swot-weaknesses">
+                <h4>⚠️ Weaknesses</h4>
+                <ul>
+                    <li>Front-Loaded Cash Flow - Heavy upfront hours before MRR compounds</li>
+                    <li>Complex Legal Framework - Requires bulletproof SLAs</li>
+                    <li>Onboarding Friction - Guiding non-technical SMEs through GCP setup</li>
+                </ul>
+            </div>
+
+            <div class="swot-card swot-opportunities">
+                <h4>🌟 Opportunities</h4>
+                <ul>
+                    <li>Government & NGO Grants - SETA digitalization grants favor OpEx models</li>
+                    <li>AIAA Upsell Penetration - Increase ARPU by 40-60%</li>
+                    <li>White-Labeling - Templatized architectures for multiple clients</li>
+                </ul>
+            </div>
+
+            <div class="swot-card swot-threats">
+                <h4>🛑 Threats</h4>
+                <ul>
+                    <li>Economic Downturns - SMEs may default on monthly retainers</li>
+                    <li>AI Commoditization - Basic AIAA services may lose value</li>
+                    <li>Cloud Provider Policy Changes - GCP IAM/billing structure changes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Canvas -->
+    <section>
+        <div class="section-header">
+            <h2>Business Model Canvas</h2>
+            <p>Strategic Framework</p>
+        </div>
+
+        <table class="bmc-table">
+            <tr>
+                <th>Customer Segments</th>
+                <td>SMEs (cash-flow constrained), Mid-Market Enterprises (OpEx constrained), NGOs/SETAs (impact tracking)</td>
+            </tr>
+            <tr>
+                <th>Value Propositions</th>
+                <td>Zero-Risk CapEx, Guaranteed Uptime & Maintenance, POPIA Compliance, AI-Driven Efficiency (20+ hours/week saved)</td>
+            </tr>
+            <tr>
+                <th>Channels</th>
+                <td>Direct B2B Outreach (LinkedIn, Cold Email), Impact Portfolio (Inbound), Strategic Partnerships (Accounting firms, Consultants)</td>
+            </tr>
+            <tr>
+                <th>Customer Relationships</th>
+                <td>Long-Term Strategic Partners, Self-Serve Portal, High-Touch Onboarding</td>
+            </tr>
+            <tr>
+                <th>Revenue Streams</th>
+                <td>Monthly Care Retainer (R3,500/mo), AIAA Retainer (R2,000-R5,000/mo), IP Buyout Fees, Basic Agency Fees</td>
+            </tr>
+            <tr>
+                <th>Key Resources</th>
+                <td>Proprietary Client Portal, GCP Agency Architecture, Standardized Legal SLAs, Full-Stack & AI Talent</td>
+            </tr>
+            <tr>
+                <th>Key Activities</th>
+                <td>Rapid MVP Development, Cloud Deployment & Security, AIAA Workflow Design, Automated Billing & Marketing</td>
+            </tr>
+            <tr>
+                <th>Key Partnerships</th>
+                <td>Google Cloud Platform, PayFast/Yoco, Legal Counsel, Local Business Chambers</td>
+            </tr>
+            <tr>
+                <th>Cost Structure</th>
+                <td>COGS: Developer salaries, AI API costs | OpEx: GCP overhead, payment fees (3-5%), marketing CAC, legal retainers</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Financial Projections -->
+    <section class="problem-section">
+        <div class="section-header">
+            <h2>3-Year Financial Projections</h2>
+            <p>Growth Trajectory & Market Leadership</p>
+        </div>
+
+        <div class="projections-grid">
+            <div class="projection-card">
+                <h4>Year 1<br>Proof of Concept</h4>
+                <div class="metric">15</div>
+                <div class="label">Active Clients</div>
+                <div style="margin-top: 1.5rem; font-size: 1.5rem; font-weight: 700;">R 846,000</div>
+                <div class="label">Annual Recurring Revenue</div>
+                <div style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">R 380,000</div>
+                <div class="label">Net Operational Profit</div>
+            </div>
+
+            <div class="projection-card" style="background: linear-gradient(135deg, #1e40af, #3b82f6);">
+                <h4>Year 2<br>Scale & AIAA</h4>
+                <div class="metric">45</div>
+                <div class="label">Active Clients</div>
+                <div style="margin-top: 1.5rem; font-size: 1.5rem; font-weight: 700;">R 2,538,000</div>
+                <div class="label">Annual Recurring Revenue</div>
+                <div style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">R 1,450,000</div>
+                <div class="label">Net Operational Profit</div>
+            </div>
+
+            <div class="projection-card" style="background: linear-gradient(135deg, #0f172a, #1e293b);">
+                <h4>Year 3<br>Market Leadership</h4>
+                <div class="metric">120</div>
+                <div class="label">Active Clients</div>
+                <div style="margin-top: 1.5rem; font-size: 1.5rem; font-weight: 700;">R 6,768,000</div>
+                <div class="label">Annual Recurring Revenue</div>
+                <div style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">R 4,200,000</div>
+                <div class="label">Net Operational Profit</div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 3rem;">
+            <h3 style="color: var(--dark-blue); margin-bottom: 1rem;">Key Assumptions</h3>
+            <ul style="color: var(--text-gray); line-height: 2; padding-left: 1.5rem;">
+                <li>5% monthly churn in Year 1, stabilizing to 1.5% by Year 3 due to IP lock-in</li>
+                <li>Blended ARPU of R4,700/month (including 60% AIAA adoption)</li>
+                <li>Gross margin scaling from 75% to 88% through templatization</li>
+                <li>Customer Acquisition Cost (CAC) of R4,500 recovered in Month 1</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap">
+        <div class="section-header">
+            <h2>Implementation Roadmap</h2>
+            <p>Strategic Milestones & Execution Plan</p>
+        </div>
+
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <span class="phase">Phase 1: Foundation (Days 1-30)</span>
+                    <h4>Infrastructure & Legal Setup</h4>
+                    <ul style="color: var(--text-gray); padding-left: 1.2rem; margin-top: 0.75rem;">
+                        <li>Finalize Legal SLA and IP Amortization contracts</li>
+                        <li>Build opensightza.co.za and /portal Client Dashboard</li>
+                        <li>Set up GCP Organization and PayFast/Yoco billing</li>
+                        <li><strong>Milestone:</strong> Infrastructure ready for first client</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <span class="phase">Phase 2: Catalyst Cohort (Days 31-90)</span>
+                    <h4>First Clients & Proof of Concept</h4>
+                    <ul style="color: var(--text-gray); padding-left: 1.2rem; margin-top: 0.75rem;">
+                        <li>Pitch and close first 3-5 SME/Enterprise clients</li>
+                        <li>Build and deploy MVPs with AIAA workflows</li>
+                        <li>Collect case studies and video testimonials</li>
+                        <li><strong>Milestone:</strong> R10,000-R15,000 MRR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <span class="phase">Phase 3: Scale & AIAA Expansion (Months 4-12)</span>
+                    <h4>Growth & Market Penetration</h4>
+                    <ul style="color: var(--text-gray); padding-left: 1.2rem; margin-top: 0.75rem;">
+                        <li>Launch targeted LinkedIn and cold-email campaigns</li>
+                        <li>Introduce advanced AIAA services (custom LLM fine-tuning)</li>
+                        <li>Hire 1 junior developer and 1 AI prompt engineer</li>
+                        <li><strong>Milestone:</strong> 20 active clients, R28,000+ monthly profit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Join the digital revolution with zero upfront risk. Let's build your custom software solution and AI automation systems today.</p>
+        <a href="#" class="cta-button">Schedule a Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 OpenSightZA. All rights reserved. | Empowering African Enterprise Through Zero-Risk Digital Transformation</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Hosted on Google Cloud Platform • africa-south1 (Johannesburg) • POPIA Compliant</p>
+    </footer>
+
+    <script>
+        // Generate colorful dots around the eye
+        const colorDotsContainer = document.getElementById('colorDots');
+        const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3', '#1dd1a1'];
+        
+        for (let i = 0; i < 24; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.style.background = colors[i % colors.length];
+            dot.style.animationDelay = `${i * 0.4}s`;
+            dot.style.transform = `rotate(${i * 15}deg) translateX(90px)`;
+            colorDotsContainer.appendChild(dot);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
