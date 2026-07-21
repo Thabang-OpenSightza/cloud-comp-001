@@ -1,0 +1,43 @@
+# ==============================================================================
+# OpenSightZA - Production Container Template
+# Purpose: Package the Express/Node.js backend for GCP Cloud Run / GKE
+# Stack: Node.js, Express, Vite, esbuild
+# ==============================================================================
+
+# Stage 1: Build the application
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build the React frontend and bundle the Express server
+RUN npm run build
+
+# Stage 2: Production runtime image (Keeps it small and secure)
+FROM node:20-alpine AS production
+
+WORKDIR /app
+
+# Set environment to production
+ENV NODE_ENV=production
+
+# Copy only the built artifacts and production dependencies from the builder stage
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+
+# Expose the port the Express server runs on (as per your README)
+EXPOSE 3000
+
+# Health check to prove to GCP the container is alive (Crucial for Cloud Computing)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/ || exit 1
+
+# Start the production server
+CMD ["node", "dist/server.cjs"]
