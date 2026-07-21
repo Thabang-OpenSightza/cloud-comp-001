@@ -1,0 +1,17 @@
+# Ignore local dependencies
+node_modules
+npm-debug.log
+
+# Ignore environment variables (NEVER put these in a Docker image!)
+.env
+.env.local
+.env.production
+
+# Ignore IDE and OS files
+.vscode
+.idea
+.DS_Store
+
+# Ignore git files
+.git
+.gitignore
